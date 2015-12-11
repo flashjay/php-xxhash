@@ -8,6 +8,6 @@
 // ARG_ENABLE("xxhash", "enable xxhash support", "no");
 
 if (PHP_XXHASH != "no") {
-	EXTENSION("xxhash", "php_xxhash.c");
+	EXTENSION("xxhash", "xxhash.c", PHP_EXTNAME_SHARED, "/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1");
 }
 

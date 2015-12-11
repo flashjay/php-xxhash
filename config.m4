@@ -15,10 +15,10 @@ dnl Otherwise use enable:
 
 PHP_ARG_ENABLE(xxhash, whether to enable xxhash support,
 dnl Make sure that the comment is aligned:
-[  --enable-xxhash            Enable xxhash support])
+[  --enable-xxhash           Enable xxhash support])
 
 if test "$PHP_XXHASH" != "no"; then
   dnl Write more examples of tests here...
 
-  PHP_NEW_EXTENSION(xxhash, php_xxhash.c, $ext_shared)
+  PHP_NEW_EXTENSION(xxhash, xxhash.c, $ext_shared,, -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1)
 fi
